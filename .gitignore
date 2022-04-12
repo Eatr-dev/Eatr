@@ -1,2 +1,4 @@
 node_modules
 Dist
+.DS_Store
+package-lock.json

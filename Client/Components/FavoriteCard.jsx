@@ -1,16 +1,16 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 
-const FavoriteCard = (props) => {
-  const business = useSelector(store => store.favs.favsList[props.index]);
-  const location = business.location;
-  const formattedPhone = `(${business.phone.slice(1,4)}) ${business.phone.slice(4,7)}-${business.phone.slice(7,11)}`;
-  const formattedAddress = `${location['address1']} ${location['address2']}\n${location['city']}, ${location['state']} ${location['zip_code']}`;
+function FavoriteCard({ index }) {
+  const business = useSelector((store) => store.favs.favsList[index]);
+  const { location } = business;
+  const formattedPhone = `(${business.phone.slice(1, 4)}) ${business.phone.slice(4, 7)}-${business.phone.slice(7, 11)}`;
+  const formattedAddress = `${location.address1} ${location.address2}\n${location.city}, ${location.state} ${location.zip_code}`;
 
-  
-  return(
+  return (
     <article className="favorite-card">
-      <img src={business.image_url} alt="restaurant's main photo"></img>
+      <img src={business.image_url} alt="restaurant's main profile pic" />
       <section className="favorites-business-info">
         <h3>{business.name}</h3>
         <address>
@@ -21,4 +21,7 @@ const FavoriteCard = (props) => {
     </article>
   );
 }
+FavoriteCard.propTypes = {
+  index: PropTypes.number.isRequired,
+};
 export default FavoriteCard;

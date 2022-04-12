@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
@@ -6,38 +5,40 @@ import { getNextActionCreator, addToFavActionCreator } from '../Actions/actions.
 
 import RestaurantCard from '../Components/RestaurantCard.jsx';
 
-
-const FeedScene = () => {
+function FeedScene() {
   const dispatch = useDispatch();
-  
+
   const handleClick = (e) => {
     if (e.target.id === 'like') {
-      //dispatch action to add to favorites
+      // dispatch action to add to favorites
       dispatch(addToFavActionCreator());
-      //dispatch aciton to get next restaurant
+      // dispatch aciton to get next restaurant
       dispatch(getNextActionCreator());
     } else {
       dispatch(getNextActionCreator());
     }
-  }
+  };
 
-    return (
-        <>
-        < RestaurantCard />
-        <button
+  return (
+    <>
+      <RestaurantCard />
+      <button
         onClick={handleClick}
-        id='dislike'
-        >X                
-        </button>
-                
-        <button
-        onClick={handleClick}
-        id='like'
-        >✓                
-        </button>        
-        </>
-    )
+        id="dislike"
+        type="button"
+      >
+        X
+      </button>
 
+      <button
+        onClick={handleClick}
+        id="like"
+        type="button"
+      >
+        ✓
+      </button>
+    </>
+  );
 }
 
 export default FeedScene;

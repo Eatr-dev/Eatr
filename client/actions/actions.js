@@ -1,5 +1,5 @@
 import axios from 'axios';
-import * as types from '../Constants/actionTypes.js';
+import * as types from '../constants/actionTypes.js';
 
 export const getRestaurantsActionCreator = body => async dispatch => {
   // FETCH API WITH AXIOS

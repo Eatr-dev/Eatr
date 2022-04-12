@@ -1,14 +1,14 @@
 {
   "name": "Eatr",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An app to find a place to eat",
   "main": "index.js",
   "keywords": [],
   "author": "Charissa Ramirez, Iftekhar Uddin, Matthew Lapeer, Christian Sansovich",
   "license": "ISC",
   "scripts": {
-    "build": "webpack",
-    "dev": "nodemon server/server.js & webpack serve",
+    "build": "NODE_ENV=production webpack",
+    "dev": "concurrently 'NODE_ENV=development webpack serve --open' 'nodemon server/server.js'",
     "start": "nodemon server/server.js",
     "test": "test"
   },
@@ -27,18 +27,22 @@
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "postcss-loader": "^6.2.1",
+    "sass": "^1.50.0",
+    "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",
     "url-loader": "^4.1.1",
-    "webpack": "^5.71.0",
+    "webpack": "^5.72.0",
     "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.8.0"
   },
   "dependencies": {
     "axios": "^0.26.1",
+    "concurrently": "^7.1.0",
+    "core-js": "^3.21.1",
     "express": "^4.17.3",
     "jsdom": "^19.0.0",
-    "node-fetch": "^3.2.3",
+    "node-fetch": "^2.6.7",
     "nodemon": "^2.0.15",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
@@ -47,7 +51,7 @@
     "redux": "^4.1.2",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.1",
+    "regenerator-runtime": "^0.13.9",
     "yelp-fusion": "^3.0.0"
-  },
-  "type": "module"
+  }
 }

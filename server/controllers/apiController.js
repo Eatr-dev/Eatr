@@ -1,11 +1,11 @@
 // const apiSearch = require('../api');
-import express from 'express';
+const express = require('express');
 ('use strict');
-import yelp from 'yelp-fusion';
+const yelp = require('yelp-fusion');
 const client = yelp.client(
   'xKtPwI4Rj7xRNlLYekgqpwlRmgtq0dUxBeYWDsbCTQhqUnqFSRluOURoDbvvXQ3G9kLWR7c3rmmNB92Ofr8cBgpy5mk4U2WdQIKWINQFGyXWG7anfSLSenMmWEFUYnYx'
 );
-import Scraper from '../scraper.js'
+const Scraper = require('../scraper.js');
 
 const apiController = {
   async storeRest(req, res, next) {
@@ -49,4 +49,5 @@ const apiController = {
   },
 };
 
-export default apiController;
+// export default apiController;
+module.exports = apiController;

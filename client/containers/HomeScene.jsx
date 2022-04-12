@@ -1,5 +1,5 @@
 import React from 'react';
-import HomeForm from '../Components/HomeForm.jsx'
+import HomeForm from '../components/HomeForm.jsx'
 
 const HomeScene = () => {
 

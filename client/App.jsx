@@ -1,6 +1,6 @@
 import React, { component } from 'react';
-import MainContainer from './Containers/MainContainer.jsx';
-import RestaurantCard from './Components/RestaurantCard.jsx';
+import MainContainer from './containers/MainContainer.jsx';
+import RestaurantCard from './components/RestaurantCard.jsx';
 
 const App = () => {
   return (
@@ -12,3 +12,4 @@ const App = () => {
 };
 
 export default App;
+// FUCK HELP ME FUUUUUCK

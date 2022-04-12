@@ -1,14 +1,13 @@
-import React, { component } from 'react';
+import React from 'react';
 import MainContainer from './Containers/MainContainer.jsx';
-import RestaurantCard from './Components/RestaurantCard.jsx';
 
-const App = () => {
+function App() {
   return (
     <div>
       <MainContainer />
       {/* <RestaurantCard /> */}
     </div>
   );
-};
+}
 
 export default App;

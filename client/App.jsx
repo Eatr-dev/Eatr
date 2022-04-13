@@ -12,4 +12,3 @@ const App = () => {
 };
 
 export default App;
-// FUCK HELP ME FUUUUUCK

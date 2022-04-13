@@ -31,7 +31,7 @@ const RestaurantCard = (props) => {
             <p>{business.hours.start}</p>
           </section>
           <section className="location-info">Location: {formattedAddress}</section>
-          <section className="reviews">WE NEED TO GET REVIEWS!</section>
+          <section className="reviews">WE (the restaurant) NEED TO GET REVIEWS!</section>
         </article>
         </> 
       );

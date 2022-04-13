@@ -10,8 +10,10 @@ import FavoritesScene from './FavoritesScene.jsx'
 
 
 const MainContainer = () => {
+  // *** look into useDispatch and useSelector
   const dispatch = useDispatch();
   const scene = useSelector(store => store.setScene.sceneState);
+  // *** figure out the state of the store, is it home feed or favorites
     const handleSceneChange = (e) => {
       if (scene === 'feed' && e.target.id === 'back') dispatch(setSceneActionCreator('home'));
       else if (scene === 'feed' && e.target.id === 'favorites') dispatch(setSceneActionCreator('favorites'));

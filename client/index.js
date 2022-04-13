@@ -1,3 +1,4 @@
+//fixing regenerator runtime error
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 

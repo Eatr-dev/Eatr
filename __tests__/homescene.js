@@ -22,10 +22,10 @@ describe('Unit testing HomeScene React component', () => {
   });
 
   test('Invokes click handler function', async () => {
-    // const button = scene.getByText('Category:').nextSibling.nextSibling.nextSibling.nextSibling;
+    const button = scene.getByText('Category:').nextSibling.nextSibling.nextSibling.nextSibling;
     const user = userEvent.setup();
     expect(click.mock.calls.length).toBe(0);
-    await user.click(scene.container.querySelector('submit'));
+    await user.click(button);
     expect(click.mock.calls.length).toBe(1);
   });
 });

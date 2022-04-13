@@ -28,4 +28,4 @@ app.use((err, req, res, next) => {
 });
 
 // Start listening on specified port
-app.listen(3000);
+export default app.listen(3000);

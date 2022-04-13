@@ -1,10 +1,10 @@
 import axios from 'axios';
 import * as types from '../Constants/actionTypes.js';
 
-export const getRestaurantsActionCreator = body => async dispatch => {
+export const getRestaurantsActionCreator = (body) => async (dispatch) => {
   // FETCH API WITH AXIOS
   const restaurants = await axios.get('/restaurants', {
-    params: body
+    params: body,
   });
   dispatch({
     type: types.GET_RESTAURANTS,
@@ -20,7 +20,7 @@ export const addToFavActionCreator = () => async (dispatch, getState) => {
   dispatch({
     type: types.ADD_TO_FAVS,
     // payload: addFav.data,
-    payload: favorite
+    payload: favorite,
   });
 };
 
@@ -34,16 +34,11 @@ export const getFavsActionCreator = () => async (dispatch) => {
   });
 };
 
-export const getNextActionCreator = () => {
-  return {
-    type: types.GET_NEXT,
-  };
-};
+export const getNextActionCreator = () => ({
+  type: types.GET_NEXT,
+});
 
-export const setSceneActionCreator = (scene) => {
-  return {
-    type: types.SET_SCENE,
-    payload: scene,
-  };
-};
-
+export const setSceneActionCreator = (scene) => ({
+  type: types.SET_SCENE,
+  payload: scene,
+});

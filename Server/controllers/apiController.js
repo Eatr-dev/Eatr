@@ -1,28 +1,28 @@
 // const apiSearch = require('../api');
 import express from 'express';
-('use strict');
 import yelp from 'yelp-fusion';
+import Scraper from '../scraper.js';
+
+('use strict');
 const client = yelp.client(
-  'xKtPwI4Rj7xRNlLYekgqpwlRmgtq0dUxBeYWDsbCTQhqUnqFSRluOURoDbvvXQ3G9kLWR7c3rmmNB92Ofr8cBgpy5mk4U2WdQIKWINQFGyXWG7anfSLSenMmWEFUYnYx'
+  'xKtPwI4Rj7xRNlLYekgqpwlRmgtq0dUxBeYWDsbCTQhqUnqFSRluOURoDbvvXQ3G9kLWR7c3rmmNB92Ofr8cBgpy5mk4U2WdQIKWINQFGyXWG7anfSLSenMmWEFUYnYx',
 );
-import Scraper from '../scraper.js'
 
 const apiController = {
   async storeRest(req, res, next) {
-
     const { term, location } = req.query;
     try {
       const obj = {
-        term: term,
-        location: location,
+        term,
+        location,
         limit: 10,
         sort_by: 'best_match',
         categories: 'restaurants',
       };
-      const response = await client.search(obj)
-      const businesses = response.jsonBody.businesses;
-      const now = new Date()
-      const day = now.getDay()
+      const response = await client.search(obj);
+      const { businesses } = response.jsonBody;
+      const now = new Date();
+      const day = now.getDay();
       // console.log(businesses.length)
 
       for (let i = 0; i < businesses.length; i++) {
@@ -34,11 +34,9 @@ const apiController = {
       }
       res.locals.restaurants = businesses;
       // console.log(res.locals.restaurants);
-      return next()
-    
-      }
-      catch (error) {
-        console.log(error);
+      return next();
+    } catch (error) {
+      console.log(error);
       return next({
         log: `Error caught in apiController.storeRest middleware ${error}`,
         message: {

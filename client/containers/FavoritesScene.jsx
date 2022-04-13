@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import FavoriteCard from '../Components/FavoriteCard.jsx';
+import FavoriteCard from '../components/FavoriteCard.jsx';
 
 const FavoritesScene = () => {
   const favsList = useSelector(store => store.favs.favsList);

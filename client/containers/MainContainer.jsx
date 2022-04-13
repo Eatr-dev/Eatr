@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
-import { setSceneActionCreator, getRestaurantsActionCreator } from '../Actions/actions.js';
+import { setSceneActionCreator, getRestaurantsActionCreator } from '../actions/actions.js';
 
-import Header from '../Components/Header.jsx';
+import Header from '../components/Header.jsx';
 import HomeScene from './HomeScene.jsx';
 import FeedScene from './FeedScene.jsx';
 import FavoritesScene from './FavoritesScene.jsx'
 
 
 const MainContainer = () => {
+  // *** look into useDispatch and useSelector
   const dispatch = useDispatch();
   const scene = useSelector(store => store.setScene.sceneState);
+  // *** figure out the state of the store, is it home feed or favorites
     const handleSceneChange = (e) => {
       if (scene === 'feed' && e.target.id === 'back') dispatch(setSceneActionCreator('home'));
       else if (scene === 'feed' && e.target.id === 'favorites') dispatch(setSceneActionCreator('favorites'));

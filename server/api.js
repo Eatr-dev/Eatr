@@ -1,4 +1,7 @@
-// import express from 'express';
+// IS THIS A PROTOTYPE FILE? 
+      // it looks like the functionality attempted here is what exists in apiController, this may be an old file committed to dev for sentimental reasons
+
+// import express from 'express'; NOOOOOO
 
 'use strict';
 
@@ -33,23 +36,23 @@ const client = yelp.client('xKtPwI4Rj7xRNlLYekgqpwlRmgtq0dUxBeYWDsbCTQhqUnqFSRlu
 //           console.log(resp.jsonBody.hours)
 //           return next()
 //           } )
-          // client.business().then(response => {
-          //   console.log(response.jsonBody.hours);
-          // }).catch(e => {
-          //   console.log(e);
-          // });
+//           client.business().then(response => {
+//             console.log(response.jsonBody.hours);
+//           }).catch(e => {
+//             console.log(e);
+//           });
 
-    // .then((response) => {
-        //   res.locals.restaurants = response.jsonBody.businesses;
-        //   res.locals.name = response.jsonBody.businesses[0].name
+//     .then((response) => {
+//           res.locals.restaurants = response.jsonBody.businesses;
+//           res.locals.name = response.jsonBody.businesses[0].name
           
-        // })
-     // console.log(businesses)
-      // }); 
-      // client.business(res.locals.name)
-      //     .then((resp) => {
-      //     //res.locals.restaurants = response.jsonBody.business
-      //     console.log(resp.jsonBody.hours)
-      //     return next()
+//         })
+//      console.log(businesses)
+//       }); 
+//       client.business(res.locals.name)
+//           .then((resp) => {
+//           //res.locals.restaurants = response.jsonBody.business
+//           console.log(resp.jsonBody.hours)
+//           return next()
           
 // module.exports = apiSearch;

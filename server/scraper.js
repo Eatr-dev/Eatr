@@ -1,5 +1,8 @@
-import jsdom from 'jsdom';
-import fetch from 'node-fetch';
+// import jsdom from 'jsdom';
+// import fetch from 'node-fetch';
+
+const jsdom = require('jsdom');
+const fetch = require('node-fetch');
 const { JSDOM } = jsdom;
 
 
@@ -45,4 +48,5 @@ Scraper.scrapePhotos = async (name) => {
   }
 }
 
-export default Scraper;
+// export default Scraper;
+module.exports = Scraper;

@@ -1,6 +1,12 @@
-import express from 'express';
-import path from 'path';
-import apiController from './controllers/apiController.js';
+const express = require('express');
+const path = require('path');
+const apiController = require('./controllers/apiController.js')
+
+// WHY ARE THEY IMPORTING???? this is express :(
+
+// import apiController from './controllers/apiController.js';
+// import express from 'express';
+// import path from 'path';
 
 const app = express();
 

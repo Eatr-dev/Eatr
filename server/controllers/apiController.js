@@ -1,11 +1,14 @@
 // const apiSearch = require('../api');
-import express from 'express';
+const express = require('express');
+// *** v v yelp api thingy 
 ('use strict');
-import yelp from 'yelp-fusion';
+
+// research yelp api
+const yelp = require('yelp-fusion');
 const client = yelp.client(
   'xKtPwI4Rj7xRNlLYekgqpwlRmgtq0dUxBeYWDsbCTQhqUnqFSRluOURoDbvvXQ3G9kLWR7c3rmmNB92Ofr8cBgpy5mk4U2WdQIKWINQFGyXWG7anfSLSenMmWEFUYnYx'
 );
-import Scraper from '../scraper.js'
+const Scraper = require('../scraper.js');
 
 const apiController = {
   async storeRest(req, res, next) {
@@ -14,12 +17,14 @@ const apiController = {
     try {
       const obj = {
         term: term,
+      // *** can we possibly do zipcode?
         location: location,
         limit: 10,
         sort_by: 'best_match',
         categories: 'restaurants',
       };
       const response = await client.search(obj)
+      // *** check API for yelp - possibly bringing the jsonBody method in
       const businesses = response.jsonBody.businesses;
       const now = new Date()
       const day = now.getDay()
@@ -49,4 +54,5 @@ const apiController = {
   },
 };
 
-export default apiController;
+// export default apiController;
+module.exports = apiController;
